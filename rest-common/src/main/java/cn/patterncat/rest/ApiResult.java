@@ -61,11 +61,28 @@ public class ApiResult<T> {
         return result;
     }
 
-    public static <T> ApiResult fail(T data,int errorCode){
+    public static <T> ApiResult<T> fail(T data,int errorCode){
         ApiResult<T> result = new ApiResult();
         result.setSuccess(false);
         result.setData(data);
         result.setErrorCode(errorCode);
+        return result;
+    }
+
+    public static <T> ApiResult<T> fail(T data,String message){
+        ApiResult<T> result = new ApiResult();
+        result.setSuccess(false);
+        result.setData(data);
+        result.setMessage(message);
+        return result;
+    }
+
+    public static <T> ApiResult<T> fail(int errorCode,String message,T data){
+        ApiResult<T> result = new ApiResult();
+        result.setSuccess(false);
+        result.setData(data);
+        result.setErrorCode(errorCode);
+        result.setMessage(message);
         return result;
     }
 

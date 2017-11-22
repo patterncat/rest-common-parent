@@ -17,6 +17,8 @@ public class ResultTest {
         System.out.println(ApiResult.fail("error"));
         System.out.println(ApiResult.fail(400,"bad request"));
         System.out.println(ApiResult.fail("content",400));
+        System.out.println(ApiResult.fail("data","message"));
+        System.out.println(ApiResult.fail(400,"msg","data"));
         System.out.println(ApiResult.success(Collections.emptyList()));
         System.out.println(ApiResult.success("hello"));
         System.out.println(ApiResult.successWithMsg("hello"));
