@@ -39,6 +39,13 @@ public class ApiResult<T> {
         return result;
     }
 
+    public static ApiResult fail(int errorCode){
+        ApiResult result = new ApiResult();
+        result.setSuccess(false);
+        result.setErrorCode(errorCode);
+        return result;
+    }
+
     public static ApiResult fail(String message){
         ApiResult result = new ApiResult();
         result.setSuccess(false);
